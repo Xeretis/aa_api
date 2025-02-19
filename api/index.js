@@ -186,11 +186,11 @@ function getRandomOnlineUser() {
     return onlineUsers[randomIndex];
 }
 
-app.get("/", function (req, res, next) {
+app.get("/users", function (req, res, next) {
     res.json(users);
 });
 
-app.get("/current-user", (req, res) => {
+app.get("/users/current-user", (req, res) => {
     const currentUser = getRandomOnlineUser();
     if (currentUser) {
         res.json(currentUser);
